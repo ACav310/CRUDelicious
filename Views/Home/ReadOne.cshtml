@@ -1,0 +1,13 @@
+
+    <div class="text-center">
+        <h1>🍴 <span class="text-warning">@ViewBag.OneDish.Name</span> 🍴</h1>
+        <h3>👨‍🍳 <span class="text-danger border-bottom border-dark">@ViewBag.OneDish.Chef</span> 👩‍🍳</h3>
+    </div>
+    <div class="bg-danger border  p-3">
+        <h4>Description: <span class="text-warning">@ViewBag.OneDish.Description</span></h4>
+        <h4>Calories: <span class="text-warning">@ViewBag.OneDish.Calories</span></h4>
+        <h4>Tastiness: <span class="text-warning" >@ViewBag.OneDish.Tastiness</span></h4>
+    </div>
+    <div class="mt-3 text-center">
+        <a class="btn btn-warning" href="/Edit/@ViewBag.OneDish.DishId">Edit</a> | <a class="btn btn-danger" href="/delete/@ViewBag.OneDish.DishId">🗑️</a>
+    </div>

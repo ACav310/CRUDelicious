@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" id>
+    <h1 class="display-4">🍟 Welcome to <span class="text-warning">CRUD</span><span class="text-danger">elicious 🍟</span></h1>
+</div>
+<div>
+    <div class="d-flex justify-content-between align-items-center">
+        <div>
+            <h2 class="mt-5 border-bottom border-dark">Check out some recent dishes!</h2>
+        </div>
+        <div>
+            <a class="mr-5 btn btn-warning" href="/Create">🍱 Add a Dish 🥡</a>
+        </div>
+    </div>
+    <table class=" table table-stripes">
+        @foreach (Dish item in ViewBag.AllDishes)
+        {
+            <tr>
+                <td>
+                    <h4 class="d-flex justify-content-between">
+                        <div><a href="/read/@item.DishId">@item.Name</a> by <span class="text-danger" >@item.Chef</span> with <span class="text-warning">@item.Tastiness</span> out of 5 CRUDs</div> 
+                        <div><a class="btn btn-warning" href="/Edit/@item.DishId">Edit</a> | <a class="btn btn-danger" href="/delete/@item.DishId">🗑️</a></div>
+                    </h4>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

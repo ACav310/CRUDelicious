@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "Create a Dish";
+}
+
+@model Dish
+
+
+<h1>Add a <span class="text-danger">Dish</span><span class="text-warning">!</span></h1>
+<div class="bg-warning">
+    <form class="d-flex justify-content-around" action="/add/process" method="post">
+
+        <div class="p-2">
+            <div class="form-group">
+                <label for="Chef">Chef's Name:</label>
+                <input class="form-control border-danger" placeholder=" 👩‍🍳 Who cooked it? 👨‍🍳" asp-for="Chef">
+                <span asp-validation-for="Chef" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="Name">Name of Dish:</label>
+                <input class="form-control border-danger" placeholder="  🌮 What was it? 🍔" asp-for="Name">
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label for="Calories"># of Calories:</label>
+                <input value="1" type="number" class="border-danger form-control" asp-for="Calories">
+                <span asp-validation-for="Calories" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="p-2 bg-danger rounded-circle m-5 ">
+            <div class="form-group mt-3">
+                <label for="Tastiness">Tastiness:</label>
+                <select class="w-75 mx-auto form-control border-warning" asp-for="Tastiness">
+                    <option hidden>1-5</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="p-2">
+            <div class="form-group">
+                <label for="Description">Description:</label>
+                <textarea class="form-control border-danger" placeholder="Ex. This pizza was super cheesy!" asp-for="Description" rows="6"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+        </div>
+        <input type="submit" value="Add!" class="btn btn-warning bg-danger mt-3 mb-3">
+    </form>
+            <div>
+            <span asp-validation-for="Tastiness" class="text-danger"></span>
+            </div>
+</div>
